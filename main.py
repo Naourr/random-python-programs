@@ -178,7 +178,28 @@ def length_converter():
         stop()
     done()
 
+# Binary to decimal manual converter
+def binary_to_decimal():
+	print("\nBinary to Decimal mnual converter.")
 
+	binary = (input("Input a binary code: "))
+	binary = binary.replace(" ", "")
+	bits = list(binary)
+	bits.reverse()
+	decimal = 0
+
+	for index, bit in enumerate(bits):
+		if bit not in ("0", "1"):
+			print("invalid characters, only ones, zeroes, and spaces are allowed.")
+			done()
+			return
+	
+		decimal += ((2 ** index) * (int(bit)))
+
+	print(f"{binary} in binary, translates to {decimal} in decimal.")
+	
+	done()
+	
 # Main Menu
 def main_menu():
     print(r"""
@@ -203,6 +224,7 @@ def main_menu():
 4) Leap Year Identifier
 5) Factorial Calculator
 6) Quiz Average Calculator
+7) Binary to Decimal Converter
 
 Tip: Press CTRL + C anytime to stop.
 """)
@@ -220,6 +242,8 @@ Tip: Press CTRL + C anytime to stop.
         factorial_calc()
     elif choice == "6":
         quiz_average()
+    elif choice == "7":
+        binary_to_decimal()
     else:
         input("Invalid choice. Press Enter to try again.")
         main_menu()
