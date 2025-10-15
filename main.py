@@ -180,7 +180,7 @@ def length_converter():
 
 # Binary to decimal manual converter
 def binary_to_decimal():
-	print("\nBinary to Decimal mnual converter.")
+	print("\nBinary to Decimal manual converter.")
 
 	binary = (input("Input a binary code: "))
 	binary = binary.replace(" ", "")
@@ -199,7 +199,50 @@ def binary_to_decimal():
 	print(f"{binary} in binary, translates to {decimal} in decimal.")
 	
 	done()
-	
+
+# Propositions thing
+def propositions_thing():
+    print("\nPropositions thing.")
+    print("Input only either T or F.")
+    p = input("Enter p: ")
+    q = input("Enter q: ")
+        
+    if p not in ("T", "F") or q not in ("T", "F"):
+        stop()
+        
+    if p == "T":
+        p = True
+    else:
+        p = False     
+    if q == "T":
+        q = True
+    else:
+        q = False
+            
+    p = bool(p)
+    q = bool(q)
+        
+    print("\nResults:\n")
+
+    if p and q:
+        print(f"p^q = True")
+    else:
+        print("p^q = False")
+    if p or q:
+        print("pvq = True")
+    else:
+        print("pvq = False")
+    if p and not q:
+        print("p -> q = False")
+    else:
+        print("p -> q = True") 
+    if p == q:
+        print("p <-> q = True")
+    else:
+        print("p <-> q = False")
+
+    done()
+
 # Main Menu
 def main_menu():
     print(r"""
@@ -225,6 +268,7 @@ def main_menu():
 5) Factorial Calculator
 6) Quiz Average Calculator
 7) Binary to Decimal Converter
+8) Propositions thing
 
 Tip: Press CTRL + C anytime to stop.
 """)
@@ -244,6 +288,8 @@ Tip: Press CTRL + C anytime to stop.
         quiz_average()
     elif choice == "7":
         binary_to_decimal()
+    elif choice == "8":
+        propositions_thing()
     else:
         input("Invalid choice. Press Enter to try again.")
         main_menu()
