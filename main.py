@@ -224,22 +224,10 @@ def propositions_thing():
         
     print("\nResults:\n")
 
-    if p and q:
-        print(f"p^q = True")
-    else:
-        print("p^q = False")
-    if p or q:
-        print("pvq = True")
-    else:
-        print("pvq = False")
-    if p and not q:
-        print("p -> q = False")
-    else:
-        print("p -> q = True") 
-    if p == q:
-        print("p <-> q = True")
-    else:
-        print("p <-> q = False")
+    print(f"p ^ q = {p and q}")
+    print(f"p v q = {p or q}")
+    print(f"p -> q = {not (p and not q)}")
+    print(f"p <-> q = {p == q}")
 
     done()
 
